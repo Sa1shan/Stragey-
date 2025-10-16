@@ -5,15 +5,15 @@ namespace Script
 {
     public class Player : MonoBehaviour
     {
-        public Animator _animator;
+        private Animator _animator;
 
-        private void Start()
+        private void Awake()
         {
             _animator = GetComponent<Animator>();
         }
-        
-        public void SetAnimantion(string animName)
-        {   
+
+        public void SetAnimation(string animName)
+        {
             _animator.SetTrigger(animName);
         }
     }
