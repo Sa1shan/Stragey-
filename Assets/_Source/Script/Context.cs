@@ -1,4 +1,4 @@
-namespace Script
+namespace _Source.Script
 {
     public class Context
     {

@@ -1,20 +1,24 @@
 using System;
 using UnityEngine;
 
-namespace Script
+namespace _Source.Script
 {
     public class Player : MonoBehaviour
     {
-        private Animator _animator;
+        public event Action OnAttack;
+        
+        [SerializeField] private Animator animator;
 
-        private void Awake()
+        private void Start()
         {
-            _animator = GetComponent<Animator>();
+            animator = GetComponent<Animator>();
         }
 
         public void SetAnimation(string animName)
         {
-            _animator.SetTrigger(animName);
+            animator.SetTrigger(animName);
+            if (animName.StartsWith("Attack"))
+                OnAttack?.Invoke();
         }
     }
 }

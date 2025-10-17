@@ -1,4 +1,4 @@
-namespace Script
+namespace _Source.Script
 {
     public interface IAttackStrategy
     {
@@ -7,6 +7,7 @@ namespace Script
     
     public class Attack1 : IAttackStrategy
     {
+
         public void PerformAttack(Player player)
         {
             player.SetAnimation("Attack1");
